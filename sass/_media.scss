@@ -1,0 +1,435 @@
+@import "vars";
+
+@media screen and (max-width: 992px) {
+  .wrapper {
+    .container {
+      padding: 0 15px;
+    }
+
+    .header {
+      .header__list {
+        li {
+          margin: 0 6px;
+        }
+      }
+
+      .header__link {
+        font-size: 16px;
+      }
+    }
+    .banner {
+      .banner__text {
+        height: auto;
+        padding-bottom: 0;
+        .banner__title {
+          font-size: 56px;
+        }
+        span {
+          font-size: 20px;
+        }
+        .banner__button {
+          position: relative;
+          left: 50%;
+          transform: translate(-50%, 0);
+        }
+      }
+      .banner__image {
+        height: 550px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 856px) {
+  .wrapper {
+    .header {
+      .header__link {
+        font-size: 14px;
+      }
+    }
+    .banner {
+      .banner__text {
+        padding: 36px 57px 80px 0;
+        .banner__title {
+          font-size: 47px;
+        }
+      }
+    }
+
+    .offers {
+      .offers__item {
+        width: 33.333%;
+      }
+    }
+
+    .coaches {
+      .coaches__slider {
+        display: block;
+
+        .coaches__nextbutton {
+          display: block;
+          border: none;
+          background-color: #fff;
+
+          .coaches__nexticon {
+            font-size: 33px;
+            color: $pink;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            margin: 0 8px 8px 0;
+
+            &:hover {
+              color: rgb(166, 30, 178);
+              transition: 0.5s;
+            }
+          }
+        }
+      }
+
+      .coaches__card {
+        position: relative;
+      }
+
+      .coaches__button {
+        display: none;
+      }
+      .coaches__arrow {
+        display: none;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  body.lock {
+    overflow: hidden;
+  }
+
+  .wrapper {
+    .header {
+      .header__burger {
+        display: block;
+        position: relative;
+        width: 32px;
+        height: 12px;
+        position: relative;
+        z-index: 4;
+
+        &::before,
+        &::after {
+          content: "";
+          background: #000;
+          position: absolute;
+          width: 100%;
+          height: 2px;
+          left: 0;
+          transition: 0.5s;
+        }
+
+        &::before {
+          top: 0;
+        }
+
+        &::after {
+          bottom: 0;
+        }
+
+        span {
+          position: absolute;
+          background-color: black;
+          position: absolute;
+          left: 0;
+          width: 100%;
+          height: 2px;
+          top: 5px;
+          transition: 0.5s;
+        }
+      }
+
+      .header__burger.active {
+        &::before {
+          transform: rotate(45deg);
+          top: 5px;
+        }
+
+        &::after {
+          transform: rotate(-45deg);
+          bottom: 5px;
+        }
+
+        span {
+          transform: scale(0);
+        }
+      }
+
+      .header__menu {
+        display: block;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        height: 100%;
+        background-color: #fff;
+        background-image: url(../img/Menu.png);
+        background-size: contain;
+        background-position-x: right;
+        z-index: 3;
+        background-repeat: no-repeat;
+        border-bottom: 4px solid $pink;
+        // padding: 80px 10px 20px 10px;
+        padding: 40px 0 0 24px;
+        transition: 0.5s;
+      }
+
+      .header__title {
+        display: block;
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 36px;
+        color: #000;
+        line-height: 1;
+        margin-bottom: 48px;
+      }
+
+      .header__menu.active {
+        right: 0;
+        overflow: scroll;
+      }
+
+      .header__list {
+        display: block;
+
+        li {
+          display: block;
+          margin: 0 0 40px 0;
+        }
+      }
+
+      .header__link {
+        font-size: 24px;
+        font-weight: 900;
+        font-family: Montserrat;
+        line-height: 1;
+      }
+
+      .header__button {
+        display: none;
+      }
+
+      .header__button-none {
+        display: block;
+        padding: 11px 39px 10px 42px;
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px;
+        border: 2px solid $pink;
+        color: $pink;
+        border-radius: 3px;
+        background-color: #fff;
+
+        &:hover {
+          background-color: $pink;
+          color: #fff;
+          transition: 0.5s;
+          box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+            0 10px 10px rgba(0, 0, 0, 0.22);
+        }
+      }
+    }
+
+    .banner {
+      // padding: 0 0;
+      flex-direction: column;
+      margin: 0 -15px 56px;
+      .banner__text {
+        padding: 32px 15px 0;
+        max-width: 100%;
+        order: 1;
+
+        .banner__title {
+          font-size: 36px;
+          text-align: center;
+        }
+
+        span {
+          font-size: 16px;
+        }
+
+        .banner__info {
+          margin: 18px 0 24px 0;
+          text-align: center;
+          font-size: 16px;
+        }
+      }
+      .banner__image {
+        width: 100%;
+        height: 275px;
+        order: 0;
+      }
+    }
+
+    .services {
+      margin-bottom: 56px;
+
+      .services__title {
+        font-size: 24px;
+        margin-bottom: 12px;
+      }
+
+      .services__description {
+        margin-bottom: 23px;
+      }
+
+      .services__slider {
+        display: block;
+      }
+
+      .services__card {
+        margin: 0 15px 0 0;
+      }
+
+      .services__subtitle {
+        margin-bottom: 16px;
+      }
+    }
+
+    .offers {
+      margin-bottom: 56px;
+
+      .offers__title {
+        font-size: 24px;
+        margin-bottom: 12px;
+      }
+
+      .offers__description {
+        margin-bottom: 32px;
+      }
+
+      .offers__item {
+        width: 50%;
+        margin-bottom: 32px;
+      }
+
+      .offers__ico {
+        font-size: 45px;
+      }
+    }
+
+    .coaches {
+      margin-bottom: 56px;
+
+      .coaches__title {
+        font-size: 24px;
+        margin-bottom: 12px;
+      }
+
+      .coaches__description {
+        margin-bottom: 32px;
+      }
+
+      .coaches__slider {
+        .coaches__card {
+          flex-direction: column;
+
+          .coaches__image {
+            width: 100%;
+            max-height: 300px;
+          }
+        }
+
+        .coaches__list {
+          margin-bottom: 32px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 595px) {
+  .wrapper {
+    .banner {
+      .banner__text {
+        padding: 32px 59px 0 16px;
+
+        .banner__title {
+          max-width: 174px;
+          text-align: start;
+        }
+
+        .banner__info {
+          text-align: start;
+          font-size: 14px;
+        }
+        span {
+          font-size: 16px;
+        }
+
+        .banner__button {
+          left: 0;
+          transform: translate(0, 0);
+        }
+      }
+    }
+
+    .services {
+      .services__description {
+        font-size: 13px;
+      }
+
+      .services__subtitle {
+        font-size: 18px;
+      }
+
+      span {
+        font-size: 13px;
+      }
+    }
+
+    .offers {
+      .offers__description {
+        font-size: 13px;
+      }
+
+      span {
+        font-size: 13px;
+      }
+    }
+
+    .coaches {
+      .coaches__description {
+        font-size: 13px;
+      }
+
+      .coaches__slider {
+        .coaches__info {
+          padding: 16px 0 0 16px;
+        }
+
+        .coaches__number {
+          font-size: 12px;
+        }
+
+        .coaches__subtitle {
+          font-size: 18px;
+        }
+
+        span {
+          font-size: 13px;
+          margin-bottom: 16px;
+        }
+
+        .coaches__point {
+          font-size: 13px;
+          margin-bottom: 8px;
+        }
+      }
+    }
+
+    .footer{
+      padding: 20px 0 18px 0;
+    }
+  }
+}
